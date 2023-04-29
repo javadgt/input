@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form onsubmit="validateFileType()">
+        <input type="file" name="" id="fileName"
+        accept="application/pdf , image/*" multiple
+        >
+        <button>submit</button>
+    </form>
+
+
+    <script>
+
+    function validateFileType(){
+
+        let fileName = document.getElementById("fileName").value;
+        let idxDot = fileName.lastIndexOf(".") + 1;
+        let extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile=="jpg" || extFile=="jpeg" || extFile=="png" || extFile=="pdf"){
+            //TO DO
+        }else{
+            alert("Only jpg/jpeg and png files are allowed!");
+        }   
+    }
+
+    </script>
+    
+</body>
+</html>
